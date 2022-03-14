@@ -1,0 +1,139 @@
+:root {
+  --light: #FFF8F0;
+  --dark: #39393a;
+  --cursorcolor: #39393a;
+}
+.light {
+  background-color: var(--light);
+  color: #39393a !important;
+  /*   margin: 0;
+  overflow: hidden; */
+}
+.dark {
+  background-color: var(--dark);
+  color: var(--light) !important;
+  /*   margin: 0; */
+  /*   overflow: hidden; */
+}
+.reverse-light {
+  color: var(--dark) !important;
+}
+.buttons-nav {
+  margin-bottom: 2rem !important;
+}
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+.vertical-center-nav {
+  margin-top: 30vh;
+}
+
+@media screen and (max-width: 600px) {
+  #right-column {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  #left-column {
+    width: 100%;
+    
+  }
+}
+#about {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.invisible-1 {
+  background-color: transparent;
+}
+.footer {
+  max-height: 200px;
+  margin-top: 20px;
+  /*   background-color: #B9ABED; */
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-family: Consolas, monaco, monospace;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+h3 {
+  font-family: Consolas, monaco, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+#desc,
+#footer {
+  font-family: Consolas, monaco, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  height: 20px;
+}
+
+/* creds https://css-tricks.com/snippets/css/typewriter-effect/ */
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid var(--cursorcolor); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  max-width: max-content;
+
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation-duration: 5s;
+  animation-name: typing;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes delete {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+/* typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--cursorcolor);
+  }
+}
+.floating-icon {
+  left: 0;
+  bottom: 0;
+  
+}
+.fas {
+  color
+}
