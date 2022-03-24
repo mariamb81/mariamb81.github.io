@@ -23,34 +23,34 @@ let refreshIndex = 0;
 function isVowel(c) {
   return ["a", "e", "i", "o", "u"].indexOf(c.toLowerCase()) !== -1;
 }
-function refreshDelete() {
-  console.log("delete");
-  textdesc.style.animationName = "delete";
-}
-function refreshDesc() {
-  setTimeout(refreshDelete, 3000);
+// function refreshDelete() {
+//   console.log("delete");
+//   textdesc.style.animationName = "delete";
+// }
+// function refreshDesc() {
+//   setTimeout(refreshDelete, 3000);
   
-  let prefix;
-  const character = adjectives[refreshIndex][0];
-  //console.log(character)
-  //console.log(isVowel(character))
-  if (refreshIndex === adjectives.length - 1) {
-    refreshIndex = 0;
-  }
-  if (isVowel(character) === false) {
-    prefix = adjStart[0];
-  } else {
-    prefix = adjStart[1];
-  }
-  textdesc.innerHTML = prefix + adjectives[refreshIndex] + ".";
-  refreshIndex++;
-  textdesc.style.animationName = "typing";
-  console.log("name changed");
-}
+//   let prefix;
+//   const character = adjectives[refreshIndex][0];
+//   //console.log(character)
+//   //console.log(isVowel(character))
+//   if (refreshIndex === adjectives.length - 1) {
+//     refreshIndex = 0;
+//   }
+//   if (isVowel(character) === false) {
+//     prefix = adjStart[0];
+//   } else {
+//     prefix = adjStart[1];
+//   }
+//   textdesc.innerHTML = prefix + adjectives[refreshIndex] + ".";
+//   refreshIndex++;
+//   textdesc.style.animationName = "typing";
+//   console.log("name changed");
+// }
 
-setTimeout(function(){ textdesc.innerHTML = "let me introduce myself :)"; }, 5000);
+// setTimeout(function(){ textdesc.innerHTML = "let me introduce myself :)"; }, 5000);
 
-setInterval(refreshDesc, 8000);
+// setInterval(refreshDesc, 8000);
 
 let x = 0;
 let y = 1;
