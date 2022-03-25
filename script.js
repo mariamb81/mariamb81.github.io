@@ -9,12 +9,6 @@ const root = document.documentElement;
 
 
 const adjectives = [
-  "lifelong learner",
-  "tea enthusiast",
-  "problem solver",
-  "technology geek",
-  "music lover",
-  "book lover",
   "welcome!"
 ];
 const adjStart = ["I'm a ", "I'm an "];
@@ -23,10 +17,10 @@ let refreshIndex = 0;
 function isVowel(c) {
   return ["a", "e", "i", "o", "u"].indexOf(c.toLowerCase()) !== -1;
 }
-// function refreshDelete() {
-//   console.log("delete");
-//   textdesc.style.animationName = "delete";
-// }
+function refreshDelete() {
+  console.log("delete");
+  textdesc.style.animationName = "delete";
+}
 // function refreshDesc() {
 //   setTimeout(refreshDelete, 3000);
   

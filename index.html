@@ -22,13 +22,21 @@
       rel="icon"
       href="https://img.icons8.com/ios/250/000000/source-code.png"
     />
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- CSS Animations -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   </head>
   <body class="light">
     <div class="container">
       <div class="row">
         <div class="col-3 order-first" id="right-column">
-          <!--           Third in DOM, ordered first -->
-          <!--VERTICAL NAV BAR-->
           <nav class="nav flex-column position-fixed">
             <button class="btn invisible-1">
               <i class="fas fa-toggle-on fa-2x" id="dark-mode"></i>
@@ -39,15 +47,8 @@
               <a class="nav-link active" href="#about">About</a>
               <a class="nav-link" href="#projects">Projects</a>
             </div>
-
-            <!--             <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a -->
-
             <div class="container fixed-bottom buttons-nav">
+              <p style="font-size: 13px;">Let's stay in touch:</p>
               <a href="https://www.linkedin.com/in/mariam-b-3a98521b1/" target="_blank">
                 <button>
                   <svg
@@ -80,19 +81,14 @@
           </nav>
         </div>
         <div class="col-9 order-last" id="left-column">
-          <!--           First in DOM, ordered last -->
-          <!--           canvas -->
-
-          <!--HERO-->
-
           <div class="jumbotron vertical-center">
             <div class="container text-center" id="home">
+              <h2 class="display-5 intro">Hi, I'm </h1>
               <h1 class="display-4">Mariam Busari</h1>
               <p class="lead typewriter" id="desc">welcome!</p>
               <p>&lt;/&gt;</p>
             </div>
           </div>
-          <!--           <i class="fas fa-atom floating-icon fa-3x"></i> -->
           <div
             data-spy="scroll"
             data-target="#navbar"
@@ -100,24 +96,18 @@
             class="scrollspy"
           >
             <!-- ABOUT -->
-            <div id="about">
-              <h2>Hello, I'm Mariam.</h2>
-              <p class="lead">
-                I'm a biomedical engineering student who strives to create
-                solutions to today's healthcare problems through innovative
-                design.
-              </p>
-              <!--  -->
-              <!-- RESUME -->
-<!--               <div class="d-flex justify-content-center">
-                <a
-                  href="" target="_blank"
-                >
-                  <button type="button" class="btn-outline-dark​ btn-lg">
-                    Resume
-                  </button>
-                </a>
-              </div> -->
+            <div class="row" id="about">
+              <div class="col">
+                <img src="resources/IMG_3787.jpg" style="width: 40vw; align-content: center;">
+              </div>
+              <div class="col">
+                  <h2>Hello, I'm Mariam.</h2>
+                <p class="lead">
+                  I'm a biomedical engineering student at the University of Waterloo who strives to create
+                  solutions to today's healthcare problems through innovative
+                  design.
+                </p>
+              </div>
             </div>
 
             <!-- PROJECTS -->
@@ -126,7 +116,7 @@
             <div class="row row-cols-1 row-cols-md-2 g-5 reverse-light">
               <!--CARD 1 top left-->
               <div class="col">
-                <div class="card">
+                <div class="card aniview" data-av-animation="fadeInUp">
                   <img
                     src="https://cdn.glitch.global/3bc54ff8-dbc8-42b9-b76f-006171dd2c4a/Screenshot%202022-01-17%20225230.png?v=1642478705732"
                     class="card-img-top"
@@ -147,6 +137,7 @@
               </div>
               
               <div class="col">
+                <!-- Card 2-->
                 <div class="card">
                   <img
                     src="https://cdn.glitch.global/3bc54ff8-dbc8-42b9-b76f-006171dd2c4a/nutrimentalogo.png?v=1642458296452"
@@ -171,6 +162,7 @@
                 </div>
               </div>
               <div class="col">
+                <!-- Card 3 -->
                 <div class="card">
                   <img
                     src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/351/689/datas/gallery.jpg"
@@ -211,52 +203,9 @@
                     >
                   </div>
                 </div>
-              </div>
-              
-              <div class="col">
-                <div class="card">
-                  <img
-                    src="https://cdn.glitch.global/3bc54ff8-dbc8-42b9-b76f-006171dd2c4a/Screenshot%202022-01-17%20231439.png?v=1642479400991"
-                    class="card-img-top"
-                    alt="walker design sketch."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Walker Attachment to Aid Stair Use</h5>
-                    <p class="card-text">
-                      A walker attachment design to allow walker users to climb stairs safely.
-                    </p>
-                    <span class="badge rounded-pill bg-dark">Iterative Design</span>
-                    <span class="badge rounded-pill bg-dark">Project Management</span>
-                    <span class="badge rounded-pill bg-dark"
-                          >Engineering Analysis</span>
-                    <span class="badge rounded-pill bg-dark"
-                          >User Research</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col">
-                <div class="card">
-                  <img
-                    src="https://cdn.glitch.com/3bc54ff8-dbc8-42b9-b76f-006171dd2c4a%2FDT3%20-%20Team%20Logo.png?v=1627258423663"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      SHAD design team project: 20/20 Vision
-                    </h5>
-                    <p class="card-text">
-                      An experiment designed to study the effect of microgravity
-                      on the shape of the human eye and the subsequent changes
-                      in vision that may occur.
-                    </p>
-                    <span class="badge rounded-pill bg-dark">Science</span>
-                    <span class="badge rounded-pill bg-dark">Experimental Design</span>
-                  </div>
-                </div>
-              </div>
+              </div>      
             </div>
+
             <div class="d-flex justify-content-center footer">
               <!--FOOTER-->
               <p class="my-auto" id="footer">Thanks for stopping by :)</p>

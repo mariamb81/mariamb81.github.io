@@ -1,5 +1,5 @@
 :root {
-  --light: #FFF8F0;
+  --light: #fff;
   --dark: #39393a;
   --cursorcolor: #39393a;
 }
@@ -22,32 +22,13 @@
   margin-bottom: 2rem !important;
 }
 .vertical-center {
-  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
 .vertical-center-nav {
   margin-top: 30vh;
-}
-
-@media screen and (max-width: 600px) {
-  #right-column {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-  }
-  #left-column {
-    width: 100%;
-    
-  }
-}
-#about {
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 .invisible-1 {
   background-color: transparent;
@@ -55,38 +36,9 @@
 .footer {
   max-height: 200px;
   margin-top: 20px;
-  /*   background-color: #B9ABED; */
   display: flex;
   align-items: center;
 }
-
-h1 {
-  font-family: Consolas, monaco, monospace;
-  font-size: 24px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 700;
-  line-height: 26.4px;
-}
-h3 {
-  font-family: Consolas, monaco, monospace;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 700;
-  line-height: 15.4px;
-}
-#desc,
-#footer {
-  font-family: Consolas, monaco, monospace;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
-  height: 20px;
-}
-
 /* creds https://css-tricks.com/snippets/css/typewriter-effect/ */
 .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -100,6 +52,67 @@ h3 {
   animation-name: typing;
   animation-iteration-count: infinite;
   animation-duration: 5s;
+}
+.floating-icon {
+  left: 0;
+  bottom: 0;
+}
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+.intro {
+  display: inline-block;
+  animation: fadeIn;
+  animation-duration: 2s;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+#navbar {
+  font-family: "Poppins", sans-serif;
+}
+@media screen and (max-width: 600px) {
+  #right-column {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  #left-column {
+    width: 100%;
+  }
+}
+#about {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 100vh;
+  justify-content: center;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+#projects {
+  margin-bottom: 40px;
+}
+#desc,
+#footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  height: 20px;
 }
 
 /* The typing effect */
@@ -128,12 +141,4 @@ h3 {
   50% {
     border-color: var(--cursorcolor);
   }
-}
-.floating-icon {
-  left: 0;
-  bottom: 0;
-  
-}
-.fas {
-  color
 }
