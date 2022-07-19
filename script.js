@@ -1,78 +1,90 @@
 console.log("script running");
 
-//description at the top of page
-const textdesc = document.getElementById("desc");
-const toggle = document.getElementById("dark-mode");
+const toggle = document.getElementById("toggle-button");
 const body = document.querySelector("body");
-//css variables
-const root = document.documentElement;
+const nav = document.querySelector("nav");
 
-
-const adjectives = [
-  "welcome!"
-];
-const adjStart = ["I'm a ", "I'm an "];
-let refreshIndex = 0;
-
-function isVowel(c) {
-  return ["a", "e", "i", "o", "u"].indexOf(c.toLowerCase()) !== -1;
-}
-function refreshDelete() {
-  console.log("delete");
-  textdesc.style.animationName = "delete";
-}
-// function refreshDesc() {
-//   setTimeout(refreshDelete, 3000);
-  
-//   let prefix;
-//   const character = adjectives[refreshIndex][0];
-//   //console.log(character)
-//   //console.log(isVowel(character))
-//   if (refreshIndex === adjectives.length - 1) {
-//     refreshIndex = 0;
-//   }
-//   if (isVowel(character) === false) {
-//     prefix = adjStart[0];
-//   } else {
-//     prefix = adjStart[1];
-//   }
-//   textdesc.innerHTML = prefix + adjectives[refreshIndex] + ".";
-//   refreshIndex++;
-//   textdesc.style.animationName = "typing";
-//   console.log("name changed");
-// }
-
-// setTimeout(function(){ textdesc.innerHTML = "let me introduce myself :)"; }, 5000);
-
-// setInterval(refreshDesc, 8000);
-
-let x = 0;
-let y = 1;
-const currToggleIcon = ["fa-toggle-on", "fa-toggle-off"];
+const currToggleIcon = ["bi-toggle-off", "bi-toggle-on"];
 const currMode = ["light", "dark"];
+const navbarMode = ["bg-light", "navbar-dark", "bg-dark"];
+//changes css variables
+const whiteHex = "#fff";
+const blackHex = "#39393a";
 
+const bodyVar = document.body.style;
 
-root.style.setProperty('--cursorcolor', "#39393a")
-
-function toggleDarkMode() {
-  // console.log(x);
-  // console.log(y);
-  toggle.classList.remove(currToggleIcon[x]);
-  toggle.classList.add(currToggleIcon[y]);
-
-  body.classList.remove(currMode[x]);
-  body.classList.add(currMode[y]);
-  if (x === 0) {//dark
-    x = 1;
-    y = 0;
-    root.style.setProperty('--cursorcolor', "#FFF8F0");
-  } else if (x === 1) {//light
-    x = 0;
-    y = 1;
-    root.style.setProperty('--cursorcolor', "#39393a");
-    
+//stores the current mode
+function loadStorage() {
+  localStorage.setItem("darkmode", "false");
+  console.log(`darkmode: ${localStorage.getItem("darkmode")}`);
+}
+function updateStorage(darkmode) {
+  localStorage.setItem("darkmode", darkmode);
+  loadColorScheme();
+  console.log(`darkmode: ${localStorage.getItem("darkmode")}`);
+}
+//keeps cards from changing color
+function preserveCardText(cards) {
+  for (let element = 0; element < cards.length; element++) {
+    const card = cards[element];
+    if (!card.classList.value.includes("light")) {
+      card.classList.add("light");
+    }
   }
 }
-toggle.addEventListener("click", e => {
+//updates color scheme
+function loadColorScheme() {
+  //x dark mode, y light mode
+  let x = 0;
+  let y = 0;
+  let darkmode = localStorage.getItem("darkmode");
+  const cards = document.getElementsByClassName("card");
+  if (darkmode === "true") {
+    x = 1;
+    y = 0;
+    nav.classList.remove(navbarMode[0]);
+    nav.classList.add(navbarMode[1]);
+    nav.classList.add(navbarMode[2]);
+    bodyVar.setProperty("--text-color", whiteHex);
+    bodyVar.setProperty("--background-color", blackHex);
+  } else if (darkmode === "false") {
+    //light mode
+    x = 0;
+    y = 1;
+    nav.classList.add(navbarMode[0]);
+    nav.classList.remove(navbarMode[1]);
+    nav.classList.remove(navbarMode[2]);
+    bodyVar.setProperty("--text-color", blackHex);
+    bodyVar.setProperty("--background-color", whiteHex);
+  }
+  toggle.classList.remove(currToggleIcon[y]);
+  toggle.classList.add(currToggleIcon[x]);
+
+  body.classList.remove(currMode[y]);
+  body.classList.add(currMode[x]);
+  preserveCardText(cards);
+}
+
+//toggles dark mode
+function toggleDarkMode() {
+  let darkmode = localStorage.getItem("darkmode");
+  if (darkmode === "true") {
+    console.log(darkmode);
+    darkmode = "false";
+    console.log(darkmode);
+  } else {
+    darkmode = "true";
+  }
+  updateStorage(darkmode);
+}
+
+toggle.addEventListener("click", (e) => {
   toggleDarkMode();
 });
+
+if (!localStorage.getItem("darkmode")) {
+  loadStorage();
+} else {
+  loadColorScheme();
+}
+

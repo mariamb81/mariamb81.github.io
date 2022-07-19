@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+:root {
+  --light: #fff;
+  --dark: #39393a;
+  --light-green: #c6f1b7;
+  --light-purple: #d4ace1;
+  --dark-green: #46ce90;
+  --dark-purple: #9b46ce;
+  --text-color: var(--dark);
+  --background-color: var(--light);
+}
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 25px;
+}
+h5 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+}
+.btn { 
+  padding: 0 !important;
+}
+.light {
+  background-color: var(--light) !important;
+  color: #39393a !important;
+}
+.dark {
+  background-color: var(--dark) !important;
+  color: var(--light) !important;
+}
+/* nav bar */
+#navbarNav {
+  justify-content: flex-end;
+}
+.container {
+  margin-top: 20vh;
+  min-height: 70vh;
+}
+.bi {
+  font-size: 30px;
+  margin: 0px 10px;
+  padding: 0;
+}
+footer .bi::before {
+  color: var(--text-color);
+}
+footer .bi:hover {
+  color: var(--dark-purple) !important;
+}
+
+/* footer */
+footer {
+  align-items: center;
+}
+footer p {
+  text-align: end;
+  margin: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    margin-top: 10vh;
+  }
+}
