@@ -1,4 +1,4 @@
-console.log("script running");
+// console.log("script running");
 
 const toggle = document.getElementById("toggle-button");
 const body = document.querySelector("body");
@@ -69,9 +69,7 @@ function loadColorScheme() {
 function toggleDarkMode() {
   let darkmode = localStorage.getItem("darkmode");
   if (darkmode === "true") {
-    console.log(darkmode);
     darkmode = "false";
-    console.log(darkmode);
   } else {
     darkmode = "true";
   }

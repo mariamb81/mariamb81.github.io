@@ -35,27 +35,21 @@
 .card .footer {
     align-items: center;
 }
-.footer span {
-    background-color: #fff !important;
-    border: 0.5px solid var(--dark);
-    font-size: 0.75rem;
-    color: var(--dark);
-}
+span {
+    background-color: var(--dark) !important;
+    letter-spacing: 1px;
+  } 
 #project-1 span {
-  color: #FC646C !important;
-  border: 0.5px solid #FC646C;
+  background-color: #FC646C !important;
 }
 #project-2 span {
-  color: #6D55FF !important;
-  border: 0.5px solid #6D55FF;
+  background-color: #6D55FF !important;
 }
 #project-3 span {
-  color: gray !important;
-  border: 0.5px solid gray;
+  background-color: gray !important;
 }
 #project-4 span {
-  color: #FCB664 !important;
-  border: 0.5px solid #FCB664;
+  background-color: #FCB664 !important;
 }
 /* Float */
 .hvr-float {
