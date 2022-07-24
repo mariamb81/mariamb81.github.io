@@ -16,12 +16,10 @@ const bodyVar = document.body.style;
 //stores the current mode
 function loadStorage() {
   localStorage.setItem("darkmode", "false");
-  console.log(`darkmode: ${localStorage.getItem("darkmode")}`);
 }
 function updateStorage(darkmode) {
   localStorage.setItem("darkmode", darkmode);
   loadColorScheme();
-  console.log(`darkmode: ${localStorage.getItem("darkmode")}`);
 }
 //keeps cards from changing color
 function preserveCardText(cards) {
@@ -86,3 +84,48 @@ if (!localStorage.getItem("darkmode")) {
   loadColorScheme();
 }
 
+const textdesc = document.getElementById("desc");
+
+const adjectives = [
+  "let me introduce myself :)",
+  "lifelong learner",
+  "tea enthusiast",
+  "problem solver",
+  "front-end developer",
+  "music lover",
+  "book lover",
+  "welcome!",
+];
+
+const adjStart = ["I'm a ", "I'm an "];
+let refreshIndex = 0;
+//check if character is a vowel
+function isVowel(c) {
+  return ["a", "e", "i", "o", "u"].indexOf(c.toLowerCase()) !== -1;
+}
+function generateDescription(index) {
+  if (index === 0) {
+    return adjectives[index];
+  } else if (index === adjectives.length - 1) {
+    return adjectives[index];
+  }
+  let prefix;
+  const firstC = adjectives[refreshIndex][0];
+  if (isVowel(firstC) === false) {
+    prefix = adjStart[0];
+  } else {
+    prefix = adjStart[1];
+  }
+  return prefix + adjectives[refreshIndex] + ".";
+}
+function refreshDesc() {
+  //if end of list, restart at zero
+  if (refreshIndex === adjectives.length - 1) {
+    refreshIndex = 0;
+  }
+  const desc = generateDescription(refreshIndex);
+  textdesc.innerHTML = desc;
+  refreshIndex++;
+}
+
+setInterval(refreshDesc, 3000);
