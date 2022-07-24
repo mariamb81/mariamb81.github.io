@@ -1,3 +1,2 @@
 # Personal Website
-
-### [mariamb81.github.io](mariamb81.github.io)
+[mariamb81.github.io](https://mariamb81.github.io/)
